@@ -6,7 +6,7 @@ export const UserList:React.FC = () => {
     console.log('users', users)
 
     return <div>
-        {users.map(u => <p>{u.name}, {u.email}</p>)}
+        {users.map(u => <p key={u.name+u.email}>{u.name}, {u.email}</p>)}
     </div>
 }
 
