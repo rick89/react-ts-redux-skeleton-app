@@ -1,3 +1,3 @@
 export enum ActionType {
-    SAVE_USER = 'save_user',
+	SAVE_USER = 'save_user',
 }

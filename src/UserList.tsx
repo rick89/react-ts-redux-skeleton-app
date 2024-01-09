@@ -1,13 +1,19 @@
-import { useTypedSelector } from "./hooks/use-typed-selector"
-import { User } from './state/user'
+import { useTypedSelector } from './hooks/use-typed-selector';
+import { User } from './state/user';
 
-export const UserList:React.FC = () => {
-    const users: User [] = useTypedSelector((state) => state.users.data)
-    console.log('users', users)
+export const UserList: React.FC = () => {
+	const users: User[] = useTypedSelector((state) => state.users.data);
+	console.log('users', users);
 
-    return <div>
-        {users.map(u => <p key={u.name+u.email}>{u.name}, {u.email}</p>)}
-    </div>
-}
+	return (
+		<div>
+			{users.map((u) => (
+				<p key={u.name + u.email}>
+					{u.name}, {u.email}
+				</p>
+			))}
+		</div>
+	);
+};
 
-export default UserList
+export default UserList;

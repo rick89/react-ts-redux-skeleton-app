@@ -1,28 +1,29 @@
-import {produce} from 'immer'
-import {ActionType} from '../action-types'
-import {Action} from '../actions'
-import {User} from '../user'
+import { produce } from 'immer';
+import { ActionType } from '../action-types';
+import { Action } from '../actions';
+import { User } from '../user';
 
 interface UsersState {
-    loading: boolean;
-    data: User []
+	loading: boolean;
+	data: User[];
 }
 
 const initialState: UsersState = {
-    loading: false,
-    data: []
-}
+	loading: false,
+	data: [],
+};
 
-const reducer = produce((state: UsersState = initialState, action: Action): UsersState => {
-    
-    switch(action.type) {
-        case ActionType.SAVE_USER:
-            state.data = [...state.data, action.payload]
-            return state
-        default:
-            return state            
-    }
+const reducer = produce(
+	(state: UsersState = initialState, action: Action): UsersState => {
+		switch (action.type) {
+			case ActionType.SAVE_USER:
+				state.data = [...state.data, action.payload];
+				return state;
+			default:
+				return state;
+		}
+	},
+	initialState
+);
 
-}, initialState)
-
-export default reducer
+export default reducer;
